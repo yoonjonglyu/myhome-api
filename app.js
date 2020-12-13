@@ -19,7 +19,7 @@ const startServer = async () => {
             console.error(err);
             return;
         }
-        console.log(`Server Ready`);
+        console.log(`Server Ready ${PORT}`);
     });
 };
 
