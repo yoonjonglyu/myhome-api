@@ -6,7 +6,7 @@
 > 데이터 플로우를 뷰가 그려주는 방식(SPA)으로 하기로 했고 무료로 할 수 있으면 무료로 하자는 생각으로 무료 서비스만으로 만들 방법을 찾아서 만든다.
 
 ## api url
-- [벡엔드 서버링크](https://isa-myblog.herokuapp.com/, myhome-api)
+- [벡엔드 서버링크](https://isa-myblog.herokuapp.com/ "myhome-api")
 
 ## DIR STRUCTURE
 - app
