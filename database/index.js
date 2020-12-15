@@ -5,9 +5,9 @@
  * 이 프로젝트는 아주 단순하게 파일에 데이터를 기록해둘 것이기에 db dir자체가 db가 된다.
  */
 const DATA = {};
-DATA.ESSAY = require('./essay');
-DATA.PORTPOLIO = require('./portpolio');
-DATA.TECH = require('./tech');
+DATA.ESSAY = require('./essay/essay');
+DATA.PORTPOLIO = require('./portpolio/portpolio');
+DATA.TECH = require('./tech/tech');
 
 class DB {
     queryTags () {
