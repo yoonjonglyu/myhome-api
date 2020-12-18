@@ -10,12 +10,13 @@ DATA.PORTPOLIO = require('./portpolio/portpolio');
 DATA.TECH = require('./tech/tech');
 
 class DB {
-    queryTags () {
-        const result = [];
-    
+    queryTags (table) {
+        let result = Array.from(DATA[table.toUpperCase()][`${table}_tags`]);
+        if(result.length === 0){
+            result = `검색 결과 태그를 찾을 수 없습니다.`;
+        }
         return result;
     }
 }
 
-
-module.exports = DB;
+module.exports = new DB();
