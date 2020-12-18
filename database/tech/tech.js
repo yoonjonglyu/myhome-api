@@ -1,5 +1,5 @@
 const tech = {
-    tech_tags : [],
+    tech_tags : ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Node.js", "vue", "php", "mysql"],
     tech_lists : [
 
     ],
