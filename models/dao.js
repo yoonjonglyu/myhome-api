@@ -2,9 +2,23 @@
 /**
  * 굳이 간단한거에 이래야하나 싶지만 기본적인 구조를 맞춘다는 의미로 dao에서 db의 데이터를 엑세스한후 모델에 넣어준다.
  */
+const DB = require('../database');
+
 class DAO {
-    getTags () {
-        return true;
+    getTechTags () {
+        const TechTags = DB.queryTags("tech");
+        
+        return TechTags;
+    }
+    getEssayTags () {
+        const EssayTags = DB.queryTags("essay");
+
+        return EssayTags;
+    }
+    getPortpolioTags () {
+        const PortpolioTags = DB.queryTags("portpolio");
+        
+        return PortpolioTags;
     }
     getEssay () {
         return true;
@@ -17,4 +31,4 @@ class DAO {
     }
 };
 
-module.exports = new DAO;
+module.exports = new DAO();
