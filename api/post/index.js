@@ -1,19 +1,17 @@
 const router = require('express').Router();
-const DB = require('../../database/index');
-const { portpolio_tags } = require('../../database/portpolio/portpolio');
+const { PostModels } = require('../../models/index');
+
 router.get('/', (req, res) => {
 
     res.send("Hello, POST");
 });
 router.get('/tags', (req, res) => {
-    const TechTags = DB.queryTags("tech");
-    const EssayTags = DB.queryTags("essay");
-    const PortpolioTags = DB.queryTags("portpolio");
+    const tags = PostModels.getTags();
     res.send(`
     Hello, Tags<br />
-    Tech : ${TechTags}<br />
-    Essay : ${EssayTags}<br />
-    portpolio : ${PortpolioTags}<br />
+    Tech : ${tags.tech}<br />
+    Essay : ${tags.essay}<br />
+    portpolio : ${tags.portpolio}<br />
     `);
 });
 router.get('/essay', (req, res) => {
