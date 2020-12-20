@@ -1,5 +1,9 @@
-const tagsController = {
+const { TagsService } = require('../../service');
 
+class TagsController {
+    getTags () {
+        return TagsService.getAllTags();
+    }
 };
 
-module.exports = tagsController;
+module.exports = new TagsController();
