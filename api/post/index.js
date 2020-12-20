@@ -1,12 +1,13 @@
 const router = require('express').Router();
-const { PostModels } = require('../../models/index');
+const { TagsController } = require('../../controller');
 
 router.get('/', (req, res) => {
 
     res.send("Hello, POST");
 });
 router.get('/tags', (req, res) => {
-    const tags = PostModels.getTags();
+    const tags = TagsController.getTags();
+    
     res.send(`
     Hello, Tags<br />
     Tech : ${tags.tech}<br />
