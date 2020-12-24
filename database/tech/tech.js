@@ -1,6 +1,8 @@
 const tech = {
-    tech_tags : ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Node.js", "vue", "php", "mysql"],
-    tech_lists : [
+    tech_tags: [
+        ...require('./tech_tags')
+    ],
+    tech_lists: [
 
     ],
 };

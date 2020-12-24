@@ -1,4 +1,5 @@
 const Essay = {
+    idx : 1,
     title : "도",
     author : "ISA",
     tags : ["도"],

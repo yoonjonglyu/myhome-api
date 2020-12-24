@@ -1,5 +1,7 @@
 const portpolio = {
-    portpolio_tags : ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Node.js", "vue", "php", "mysql"],
+    portpolio_tags : [
+        ...require('./portpolio_tags')
+    ],
     portpolio_lists : [
 
     ],
