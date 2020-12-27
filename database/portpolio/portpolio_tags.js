@@ -1,16 +1,16 @@
 const { insertTag } = require('../entity');
-const tableName = "portpolio";
+const { PORTFOLIO } = require('../../config').TABLE;
 
 const portpolioTags = [
-    insertTag(tableName, 1, "HTML"),
-    insertTag(tableName, 2, "CSS"),
-    insertTag(tableName, 3, "JavaScript"),
-    insertTag(tableName, 4, "TypeScript"),
-    insertTag(tableName, 5, "React"),
-    insertTag(tableName, 6, "Node.js"),
-    insertTag(tableName, 7, "Vue"),
-    insertTag(tableName, 8, "PHP"),
-    insertTag(tableName, 9, "MySQL"),
+    insertTag(PORTFOLIO, 1, "HTML"),
+    insertTag(PORTFOLIO, 2, "CSS"),
+    insertTag(PORTFOLIO, 3, "JavaScript"),
+    insertTag(PORTFOLIO, 4, "TypeScript"),
+    insertTag(PORTFOLIO, 5, "React"),
+    insertTag(PORTFOLIO, 6, "Node.js"),
+    insertTag(PORTFOLIO, 7, "Vue"),
+    insertTag(PORTFOLIO, 8, "PHP"),
+    insertTag(PORTFOLIO, 9, "MySQL"),
 ];
 
 module.exports = portpolioTags;

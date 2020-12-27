@@ -1,8 +1,8 @@
 const { insertTag } = require('../entity');
-const tableName = "essay";
+const { ESSAY } = require('../../config').TABLE;
 
 const EssayTags = [
-    insertTag(tableName, 1, "도"),
+    insertTag(ESSAY, 1, "도"),
 ];
 
 module.exports = EssayTags;
