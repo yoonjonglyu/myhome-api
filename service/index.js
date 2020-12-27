@@ -1,7 +1,9 @@
-const TagsService = require('./tags');
+const TagService = require('./tag');
+const PostService = require('./post');
 
 const Service = {
-    TagsService
+    TagService,
+    PostService
 };
 
 module.exports = Service;
