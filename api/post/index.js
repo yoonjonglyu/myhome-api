@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { TagsController, PostController } = require('../../controller');
+const { TagController, PostController } = require('../../controller');
 
 router.get('/', (req, res) => {
 
@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
 });
 router.get('/tags', (req, res) => {
     try {
-        const tags = TagsController.getTags();
+        const tags = TagController.getTags();
 
         res.status(200).json(tags);
     } catch (e) {
