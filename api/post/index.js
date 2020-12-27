@@ -6,14 +6,13 @@ router.get('/', (req, res) => {
     res.send("Hello, POST");
 });
 router.get('/tags', (req, res) => {
-    const tags = TagsController.getTags();
-    
-    res.send(`
-    Hello, Tags<br />
-    Tech : ${tags.tech}<br />
-    Essay : ${tags.essay}<br />
-    portpolio : ${tags.portpolio}<br />
-    `);
+    try {
+        const tags = TagsController.getTags();
+        res.status(200).json(tags);
+    } catch (e){
+        res.status(400).send("tags를 불러오는 과정에서 예기치 못한 장애가 발생했습니다.");
+        console.error(e);
+    }
 });
 router.get('/essay', (req, res) => {
     res.send("Hello, Essay");
