@@ -20,14 +20,20 @@ class DAO {
         
         return PortpolioTags;
     }
-    getEssay () {
-        return true;
+    getEssayList () {
+        const EssayPostList = DB.queryPostList("essay");
+
+        return EssayPostList;
     }
-    getTech () {
-        return true;
+    getTechList () {
+        const TechPostList = DB.queryPostList("tech");
+
+        return TechPostList;
     }
-    getPortpolio () {
-        return true;
+    getPortpolioList () {
+        const PortpoilioPostList = DB.queryPostList("portpolio");
+
+        return PortpoilioPostList;
     }
 };
 
