@@ -18,9 +18,14 @@ router.get('/tags', (req, res) => {
 });
 router.get('/essay', (req, res) => {
     try {
-        const EssayList = PostController.getEssayList();
+        const IDX = parseInt(req.query.idx);
+        if(!isNaN(IDX)){
 
-        res.status(200).json(EssayList);
+        } else {
+            const EssayList = PostController.getEssayList();
+
+            res.status(200).json(EssayList);
+        }
     } catch (e) {
         res.status(400).send("에세이 목록을 불러오는 과정에서 예기치 못한 장애가 발생했습니다.");
 
@@ -29,9 +34,14 @@ router.get('/essay', (req, res) => {
 });
 router.get('/tech', (req, res) => {
     try {
-        const TechList = PostController.getTechList();
+        const IDX = parseInt(req.query.idx);
+        if(!isNaN(IDX)){
+            
+        } else {
+            const TechList = PostController.getTechList();
 
-        res.status(200).json(TechList);
+            res.status(200).json(TechList);
+        }
     } catch (e) {
         res.status(400).send("기술 목록을 불러오는 과정에서 예기치 못한 장애가 발생했습니다.");
 
@@ -40,9 +50,14 @@ router.get('/tech', (req, res) => {
 });
 router.get('/portpolio', (req, res) => {
     try {
-        const PortpolioList = PostController.getPortpolioList();
+        const IDX = parseInt(req.query.idx);
+        if(!isNaN(IDX)){
+            
+        } else {
+            const PortpolioList = PostController.getPortpolioList();
 
-        res.status(200).json(PortpolioList);
+            res.status(200).json(PortpolioList);
+        }
     } catch (e) {
         res.status(400).send("포트폴리오 목록을 불러오는 과정에서 예기치 못한 장애가 발생했습니다.");
 
