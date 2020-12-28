@@ -20,7 +20,9 @@ router.get('/essay', (req, res) => {
     try {
         const IDX = parseInt(req.query.idx);
         if(!isNaN(IDX)){
+            const EssayPost = PostController.getEssay(IDX);
 
+            res.status(200).json(EssayPost);
         } else {
             const EssayList = PostController.getEssayList();
 
@@ -36,7 +38,9 @@ router.get('/tech', (req, res) => {
     try {
         const IDX = parseInt(req.query.idx);
         if(!isNaN(IDX)){
-            
+            const TechPost = PostController.getTech(IDX);
+
+            res.status(200).json(TechPost);
         } else {
             const TechList = PostController.getTechList();
 
@@ -52,7 +56,9 @@ router.get('/portpolio', (req, res) => {
     try {
         const IDX = parseInt(req.query.idx);
         if(!isNaN(IDX)){
-            
+            const PortpolioPost = PostController.getPortpolio(IDX);
+
+            res.status(200).json(PortpolioPost);
         } else {
             const PortpolioList = PostController.getPortpolioList();
 
