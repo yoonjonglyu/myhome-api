@@ -47,6 +47,42 @@ class PostService {
 
         return result;
     }
+    getEssay (idx) {
+        const result = PostModels.getEssay(idx);
+        result.essay = {
+            title : result.essay.title,
+            author : result.essay.author,
+            tags : result.essay.tags,
+            date : result.essay.date,
+            contents : result.essay.contents
+        };
+
+        return result;
+    }
+    getTech (idx) {
+        const result = PostModels.getTech(idx);
+        result.tech = {
+            title : result.tech.title,
+            author : result.tech.author,
+            tags : result.tech.tags,
+            date : result.tech.date,
+            contents : result.tech.contents
+        };
+
+        return result;
+    }
+    getPortpolio (idx) {
+        const result = PostModels.getPortpolio(idx);
+        result.portpolio = {
+            title : result.portpolio.title,
+            author : result.portpolio.author,
+            tags : result.portpolio.tags,
+            date : result.portpolio.date,
+            contents : result.portpolio.contents
+        };
+
+        return result;
+    }
 }
 
 module.exports = new PostService();
