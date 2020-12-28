@@ -35,6 +35,21 @@ class DAO {
 
         return PortpoilioPostList;
     }
+    getEssay (idx) {
+        const EssayPost = DB.queryPost("essay", idx);
+
+        return EssayPost;
+    }
+    getTech (idx) {
+        const TechPost = DB.queryPost("tech", idx);
+
+        return TechPost;
+    }
+    getPortpolio (idx) {
+        const PortpolioPost = DB.queryPost("portpolio", idx);
+
+        return PortpolioPost;
+    }
 };
 
 module.exports = new DAO();
