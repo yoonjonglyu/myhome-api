@@ -48,7 +48,7 @@ class PostModels {
 
         return result;
     }
-    getPortpolio () {
+    getPortpolio (idx) {
         const result = {
             portpolio : DAO.getPortpolio((idx - 1)),
         };
