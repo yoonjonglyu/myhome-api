@@ -45,6 +45,7 @@ class Entity {
      *  title : String
      *  author : String,
      *  tags : Array[{idx, name}],
+     *  date : String,
      *  description : String,
      *  contents : String
      * }
@@ -76,6 +77,9 @@ class Entity {
             if(post.tags === undefined){
                 throw Error(`${table} : post.tags가 없습니다.`);
             }
+            if(post.date === undefined){
+                throw Error(`${table} : post.date가 없습니다.`);
+            }
             if(post.description === undefined){
                 throw Error(`${table} : post.description이 없습니다.`);
             }
@@ -88,6 +92,7 @@ class Entity {
                 title : post.title,
                 author : post.author,
                 tags : post.tags,
+                date : post.date,
                 description : post.description,
                 contents : post.contents
             };
