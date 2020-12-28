@@ -34,6 +34,18 @@ class DB {
 
         return result;
     }
+    queryPost (table, idx) {
+        const result = Array.from(DATA[table.toUpperCase()][`${table}_lists`][idx]);
+        
+        if(result.length === 0){
+            console.log(`${table}의 검색 결과를 찾을 수 없습니다.`);
+        } else if (result === undefined){
+            console.error(`${table} tag의 질의과정에서 문제가 발생 되었습니다.`)
+            return [];
+        }
+
+        return result;
+    }
 }
 
 module.exports = new DB();
