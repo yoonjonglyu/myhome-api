@@ -34,6 +34,27 @@ class PostModels {
 
         return result;
     }
+    getEssay (idx) {
+        const result = {
+            essay : DAO.getEssay((idx - 1)),
+        };
+
+        return result;
+    }
+    getTech (idx) {
+        const result = {
+            tech : DAO.getTech((idx - 1)),
+        };
+
+        return result;
+    }
+    getPortpolio () {
+        const result = {
+            portpolio : DAO.getPortpolio((idx - 1)),
+        };
+
+        return result;
+    }
 }
 
 module.exports = new PostModels();
