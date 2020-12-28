@@ -37,7 +37,7 @@ class DAO {
     }
     getEssay (idx) {
         const EssayPost = DB.queryPost("essay", idx);
-
+        
         return EssayPost;
     }
     getTech (idx) {
