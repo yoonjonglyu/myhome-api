@@ -12,12 +12,12 @@ DATA.TECH = require('./tech/tech');
 class DB {
     queryTags (table) {
         const result = Array.from(DATA[table.toUpperCase()][`${table}_tags`]);
-
-        if(result.length === 0){
-            console.log(`${table}의 검색 결과를 찾을 수 없습니다.`);
-        } else if (result === undefined){
+        
+        if (result === undefined){
             console.error(`${table} tag의 질의과정에서 문제가 발생 되었습니다.`)
             return [];
+        } else if (result.length === 0){
+            console.log(`${table}의 검색 결과를 찾을 수 없습니다.`);
         }
 
         return result;
@@ -25,10 +25,11 @@ class DB {
     queryPostList (table) {
         const result = Array.from(DATA[table.toUpperCase()][`${table}_lists`]);
         
-        if(result.length === 0){
+        if (result === undefined){
+            console.error(`${table} postList의 질의과정에서 문제가 발생 되었습니다.`)
+            return [];
+        } else if (result.length === 0){
             console.log(`${table}의 검색 결과를 찾을 수 없습니다.`);
-        } else if (result === undefined){
-            console.error(`${table} tag의 질의과정에서 문제가 발생 되었습니다.`)
             return [];
         }
 
@@ -37,11 +38,11 @@ class DB {
     queryPost (table, idx) {
         const result = Array.from(DATA[table.toUpperCase()][`${table}_lists`])[idx];
         
-        if(result === undefined){
-            console.log(`${table}의 검색 결과를 찾을 수 없습니다.`);
+        if (idx === undefined){
+            console.error(`${table} post의 idx가 없습니다.`);
             return [];
         } else if (result === undefined){
-            console.error(`${table} tag의 질의과정에서 문제가 발생 되었습니다.`)
+            console.log(`${table}의 검색 결과를 찾을 수 없습니다.`);
             return [];
         }
 
