@@ -15,10 +15,10 @@ class DAO {
 
         return EssayTags;
     }
-    getPortpolioTags () {
-        const PortpolioTags = DB.queryTags("portpolio");
+    getportfolioTags () {
+        const portfolioTags = DB.queryTags("portfolio");
         
-        return PortpolioTags;
+        return portfolioTags;
     }
     getEssayList () {
         const EssayPostList = DB.queryPostList("essay");
@@ -30,8 +30,8 @@ class DAO {
 
         return TechPostList;
     }
-    getPortpolioList () {
-        const PortpoilioPostList = DB.queryPostList("portpolio");
+    getportfolioList () {
+        const PortpoilioPostList = DB.queryPostList("portfolio");
 
         return PortpoilioPostList;
     }
@@ -45,10 +45,10 @@ class DAO {
 
         return TechPost;
     }
-    getPortpolio (idx) {
-        const PortpolioPost = DB.queryPost("portpolio", idx);
+    getportfolio (idx) {
+        const portfolioPost = DB.queryPost("portfolio", idx);
 
-        return PortpolioPost;
+        return portfolioPost;
     }
 };
 

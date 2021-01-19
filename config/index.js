@@ -8,7 +8,7 @@ const config = {
     TABLE : {
         ESSAY : "essay",
         TECH : "tech",
-        PORTFOLIO : "portpolio"
+        PORTFOLIO : "portfolio"
     },
 };
 

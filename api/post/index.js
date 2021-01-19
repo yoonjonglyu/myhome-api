@@ -52,17 +52,17 @@ router.get('/tech', (req, res) => {
         console.error(e);
     }
 });
-router.get('/portpolio', (req, res) => {
+router.get('/portfolio', (req, res) => {
     try {
         const IDX = parseInt(req.query.idx);
         if(!isNaN(IDX)){
-            const PortpolioPost = PostController.getPortpolio(IDX);
+            const portfolioPost = PostController.getportfolio(IDX);
 
-            res.status(200).json(PortpolioPost);
+            res.status(200).json(portfolioPost);
         } else {
-            const PortpolioList = PostController.getPortpolioList();
+            const portfolioList = PostController.getportfolioList();
 
-            res.status(200).json(PortpolioList);
+            res.status(200).json(portfolioList);
         }
     } catch (e) {
         res.status(400).send("포트폴리오 목록을 불러오는 과정에서 예기치 못한 장애가 발생했습니다.");

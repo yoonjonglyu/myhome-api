@@ -8,7 +8,7 @@ class PostModels {
         const result = {
             essay: DAO.getEssayTags(),
             tech: DAO.getTechTags(),
-            portpolio: DAO.getPortpolioTags()
+            portfolio: DAO.getportfolioTags()
         }
 
         return result;
@@ -27,9 +27,9 @@ class PostModels {
 
         return result;
     }
-    getPortpolioList () {
+    getportfolioList () {
         const result = {
-            portpolio : DAO.getPortpolioList(),
+            portfolio : DAO.getportfolioList(),
         };
 
         return result;
@@ -48,9 +48,9 @@ class PostModels {
 
         return result;
     }
-    getPortpolio (idx) {
+    getportfolio (idx) {
         const result = {
-            portpolio : DAO.getPortpolio((idx - 1)),
+            portfolio : DAO.getportfolio((idx - 1)),
         };
 
         return result;

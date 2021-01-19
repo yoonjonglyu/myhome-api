@@ -1,7 +1,7 @@
 const { insertTag } = require('../entity');
 const { PORTFOLIO } = require('../../config').TABLE;
 
-const portpolioTags = [
+const portfolioTags = [
     insertTag(PORTFOLIO, 1, "HTML"),
     insertTag(PORTFOLIO, 2, "CSS"),
     insertTag(PORTFOLIO, 3, "JavaScript"),
@@ -13,4 +13,4 @@ const portpolioTags = [
     insertTag(PORTFOLIO, 9, "MySQL"),
 ];
 
-module.exports = portpolioTags;
+module.exports = portfolioTags;
