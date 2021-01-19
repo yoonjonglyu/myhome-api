@@ -32,9 +32,9 @@ class PostService {
 
         return result;
     }
-    getPortpolioList () {
-        const result = PostModels.getPortpolioList();
-        result.portpolio = result.portpolio.map((post) => {
+    getportfolioList () {
+        const result = PostModels.getportfolioList();
+        result.portfolio = result.portfolio.map((post) => {
             return {
                 idx : post.idx,
                 title : post.title,
@@ -71,14 +71,14 @@ class PostService {
 
         return result;
     }
-    getPortpolio (idx) {
-        const result = PostModels.getPortpolio(idx);
-        result.portpolio = {
-            title : result.portpolio.title,
-            author : result.portpolio.author,
-            tags : result.portpolio.tags,
-            date : result.portpolio.date,
-            contents : result.portpolio.contents
+    getportfolio (idx) {
+        const result = PostModels.getportfolio(idx);
+        result.portfolio = {
+            title : result.portfolio.title,
+            author : result.portfolio.author,
+            tags : result.portfolio.tags,
+            date : result.portfolio.date,
+            contents : result.portfolio.contents
         };
 
         return result;
