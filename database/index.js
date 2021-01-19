@@ -6,7 +6,7 @@
  */
 const DATA = {};
 DATA.ESSAY = require('./essay/essay');
-DATA.portfolio = require('./portfolio/portfolio');
+DATA.PORTFOLIO = require('./portfolio/portfolio');
 DATA.TECH = require('./tech/tech');
 
 class DB {
