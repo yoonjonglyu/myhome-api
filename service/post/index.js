@@ -5,14 +5,7 @@ class PostService {
     getEssayList () {
         const result = PostModels.getEssayList();
         result.essay = result.essay.map((post) => {
-            return {
-                idx : post.idx,
-                title : post.title,
-                author : post.author,
-                tags : post.tags,
-                date : post.date,
-                description : post.description,
-            };
+            return this.setPostList(post.idx, post.date, post.author, post.title, post.description, post.tags);
         })
 
         return result;
@@ -20,14 +13,7 @@ class PostService {
     getTechList () {
         const result = PostModels.getTechList();
         result.tech = result.tech.map((post) => {
-            return {
-                idx : post.idx,
-                title : post.title,
-                author : post.author,
-                tags : post.tags,
-                date : post.date,
-                description : post.description,
-            };
+            return this.setPostList(post.idx, post.date, post.author, post.title, post.description, post.tags);
         })
 
         return result;
@@ -35,14 +21,7 @@ class PostService {
     getportfolioList () {
         const result = PostModels.getportfolioList();
         result.portfolio = result.portfolio.map((post) => {
-            return {
-                idx : post.idx,
-                title : post.title,
-                author : post.author,
-                tags : post.tags,
-                date : post.date,
-                description : post.description,
-            };
+            return this.setPostList(post.idx, post.date, post.author, post.title, post.description, post.tags);
         })
 
         return result;
@@ -82,6 +61,17 @@ class PostService {
         };
 
         return result;
+    }
+
+    setPostList (idx, date, author, title, description, tags) { // 빌더 패턴마렵다..
+        return {
+            postIdx : idx,
+            postDate : date,
+            postAuthor : author, 
+            postTitle : title,
+            postDescription : description,
+            postTags : tags,
+        }
     }
 }
 
