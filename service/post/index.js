@@ -28,37 +28,37 @@ class PostService {
     }
     getEssay (idx) {
         const result = PostModels.getEssay(idx);
-        result.essay = {
-            title : result.essay.title,
-            author : result.essay.author,
-            tags : result.essay.tags,
-            date : result.essay.date,
-            contents : result.essay.contents
-        };
+        result.essay = this.setPostContents().
+        setPostTitle(result.essay.title).
+        setPostDate(result.essay.date).
+        setPostauthor(result.essay.author).
+        setPostTags(result.essay.tags).
+        setPostContents(result.essay.postContent).
+        build();
 
         return result;
     }
     getTech (idx) {
         const result = PostModels.getTech(idx);
-        result.tech = {
-            title : result.tech.title,
-            author : result.tech.author,
-            tags : result.tech.tags,
-            date : result.tech.date,
-            contents : result.tech.contents
-        };
+        result.tech = this.setPostContents().
+        setPostTitle(result.tech.title).
+        setPostDate(result.tech.date).
+        setPostauthor(result.tech.author).
+        setPostTags(result.tech.tags).
+        setPostContents(result.tech.postContent).
+        build();
 
         return result;
     }
     getportfolio (idx) {
         const result = PostModels.getportfolio(idx);
-        result.portfolio = {
-            title : result.portfolio.title,
-            author : result.portfolio.author,
-            tags : result.portfolio.tags,
-            date : result.portfolio.date,
-            contents : result.portfolio.contents
-        };
+        result.portfolio = this.setPostContents().
+        setPostTitle(result.portfolio.title).
+        setPostDate(result.portfolio.date).
+        setPostauthor(result.portfolio.author).
+        setPostTags(result.portfolio.tags).
+        setPostContents(result.portfolio.postContent).
+        build();
 
         return result;
     }
@@ -72,6 +72,42 @@ class PostService {
             postDescription : description,
             postTags : tags,
         }
+    }
+    setPostContents(){
+        let _title, _date, _author, _contents, _tags;
+
+        return {
+            setPostTitle : function (title) {
+                _title = title;
+                return this;
+            },
+            setPostDate : function (date) {
+                _date = date;
+                return this;
+            },
+            setPostauthor : function (author) {
+                _author = author;
+                return this;
+            },
+            setPostContents : function (contents) {
+                _contents = contents;
+                return this;
+            },
+            setPostTags : function (tags) {
+                _tags = tags;
+                return this;
+            },
+            build : function () {
+                return {
+                    postTitle : _title,
+                    postDate : _date,
+                    postAuthor : _author,
+                    postContent : _contents,
+                    postTags : _tags
+                };
+            }
+        }
+
     }
 }
 
