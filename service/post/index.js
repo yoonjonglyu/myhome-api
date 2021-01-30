@@ -33,7 +33,7 @@ class PostService {
         setPostDate(result.essay.date).
         setPostauthor(result.essay.author).
         setPostTags(result.essay.tags).
-        setPostContents(result.essay.postContent).
+        setPostContents(result.essay.contents).
         build();
 
         return result;
@@ -45,7 +45,7 @@ class PostService {
         setPostDate(result.tech.date).
         setPostauthor(result.tech.author).
         setPostTags(result.tech.tags).
-        setPostContents(result.tech.postContent).
+        setPostContents(result.tech.contents).
         build();
 
         return result;
