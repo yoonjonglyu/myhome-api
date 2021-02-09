@@ -70,5 +70,16 @@ router.get('/portfolio', (req, res) => {
         console.error(e);
     }
 });
+router.get('/taglist', (req, res) => {
+    try {
+        const TYPE = req.query.type;
+        const IDX = parseInt(req.query.idx);
+        const tagPostList = PostController.getTagList(TYPE, IDX);
+
+        res.status(200).json(tagPostList);
+    } catch (e) {
+        console.error(e);
+    }
+});
 
 module.exports = router;
