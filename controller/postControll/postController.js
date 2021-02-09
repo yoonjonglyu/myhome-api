@@ -19,6 +19,9 @@ class PostController {
     getportfolio (idx) {
         return PostService.getportfolio(idx);
     }
+    getTagList (type, idx) {
+        return PostService.getTagList(type, idx);
+    }
 };
 
 module.exports = new PostController();
