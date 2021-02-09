@@ -1,5 +1,6 @@
 // 사실 파일명을 죄다 index.js라고 짓는 것은 여기서 require해서 다 export 시켜주기 때문이다. 다른 구조도 같은 이유다.
 const { PostModels } = require('../../models');
+const { ESSAY, TECH, PORTFOLIO } = require('../../config').TABLE;
 
 class PostService {
     getEssayList () {
@@ -59,6 +60,31 @@ class PostService {
         setPostTags(result.portfolio.tags).
         setPostContents(result.portfolio.postContent).
         build();
+
+        return result;
+    }
+    getTagList (type, idx) {
+        let postList = [];
+        switch(type){
+            case ESSAY:
+                postList = this.getEssayList()[ESSAY];
+                break;
+            case TECH:
+                postList = this.getTechList()[TECH];
+                break;
+            case PORTFOLIO:
+                postList = this.getportfolioList()[PORTFOLIO];
+                break;
+            default:
+                break;
+        }
+        const result = postList.filter((post) => {
+            post.postTags = post.postTags.filter((tag) => tag.idx === idx)
+                if(post.postTags.length > 0){
+                    return true;
+                }
+            }
+        )
 
         return result;
     }
