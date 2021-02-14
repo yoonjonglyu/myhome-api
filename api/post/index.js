@@ -78,6 +78,8 @@ router.get('/taglist', (req, res) => {
 
         res.status(200).json(tagPostList);
     } catch (e) {
+        res.status(400).send("포스트 목록을 불러오는 과정에서 예기치 못한 장애가 발생했습니다.");
+
         console.error(e);
     }
 });
