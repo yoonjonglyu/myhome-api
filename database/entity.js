@@ -102,6 +102,51 @@ class Entity {
             console.error(e);
         }
     };
+    insertPortfolio (idx, title, portfolio) {
+        if(idx === undefined){  
+            throw Error(`포트폴리오 : idx는 빈값일 수 없습니다.`);
+        }
+        if(typeof idx !== "number"){
+            throw Error(`포트폴리오 : idx가 number 타입이 아닙니다.`);
+        }
+        if(title === undefined){
+            throw Error(`portfolio : title이 없습니다.`);
+        }
+        if(portfolio === undefined){
+            throw Error(`포트폴리오 : portfolio는 빈값일 수 없습니다.`);
+        }
+        if(typeof portfolio !== "object"){
+            throw Error(`포트폴리오 : portfolio가 object 타입이 아닙니다.`);
+        }
+
+        if(portfolio.thum === undefined){
+            throw Error(`포트폴리오 : portfolio.thum이 없습니다.`);
+        }
+        if(portfolio.tags === undefined){
+            throw Error(`포트폴리오 : portfolio.tags가 없습니다.`);
+        }
+        if(portfolio.date === undefined){
+            throw Error(`${table} : portfolio.date가 없습니다.`);
+        }
+        if(portfolio.description === undefined){
+            throw Error(`${table} : portfolio.description이 없습니다.`);
+        }
+        if(portfolio.contents === undefined){
+            throw Error(`${table} : portfolio.contents가 없습니다.`);
+        }
+
+        const result = {
+            idx : idx,
+            title : title,
+            date : portfolio.date,
+            tags : portfolio.tags,
+            thum : portfolio.thum,
+            description : portfolio.description,
+            contents : portfolio.contents
+        };
+
+        return result;
+    }
 };
 
 module.exports = new Entity();
