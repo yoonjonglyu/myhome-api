@@ -6,7 +6,12 @@ class PostService {
     getEssayList() {
         const result = PostModels.getEssayList();
         result.essay = result.essay.map((post) => {
-            return this.setPostList(post.idx, post.date, post.author, post.title, post.description, post.tags);
+            return this.setPostList(post.idx, post.title)
+            .setAuthor(post.author)
+            .setDate(post.date)
+            .setTags(post.tags)
+            .setDescription(post.description)
+            .build();
         })
 
         return result;
@@ -14,7 +19,12 @@ class PostService {
     getTechList() {
         const result = PostModels.getTechList();
         result.tech = result.tech.map((post) => {
-            return this.setPostList(post.idx, post.date, post.author, post.title, post.description, post.tags);
+            return this.setPostList(post.idx, post.title)
+            .setAuthor(post.author)
+            .setDate(post.date)
+            .setTags(post.tags)
+            .setDescription(post.description)
+            .build();
         })
 
         return result;
