@@ -7,8 +7,8 @@ class PostController {
     getTechList () {
         return PostService.getTechList();
     }
-    getportfolioList () {
-        return PostService.getportfolioList();
+    getPortfolioList () {
+        return PostService.getPortfolioList();
     }
     getEssay (idx) {
         return PostService.getEssay(idx);
@@ -16,8 +16,8 @@ class PostController {
     getTech (idx) {
         return PostService.getTech(idx);
     }
-    getportfolio (idx) {
-        return PostService.getportfolio(idx);
+    getPortfolio (idx) {
+        return PostService.getPortfolio(idx);
     }
     getTagList (type, idx) {
         return PostService.getTagList(type, idx);

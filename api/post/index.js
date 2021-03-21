@@ -56,11 +56,11 @@ router.get('/portfolio', (req, res) => {
     try {
         const IDX = parseInt(req.query.idx);
         if(!isNaN(IDX)){
-            const portfolioPost = PostController.getportfolio(IDX);
+            const portfolioPost = PostController.getPortfolio(IDX);
 
             res.status(200).json(portfolioPost);
         } else {
-            const portfolioList = PostController.getportfolioList();
+            const portfolioList = PostController.getPortfolioList();
 
             res.status(200).json(portfolioList);
         }
