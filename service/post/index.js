@@ -133,7 +133,43 @@ class PostService {
                 };
             }
         }
-
+    }
+    setPortfolioList(idx, title) {
+        const _idx = idx;
+        const _title = title;
+        if(idx === undefined || title === undefined){
+            console.error("portfolio Invalid idx && title");
+            return;
+        }
+        let  _date, _tags, _thum, _description;
+        return {
+            setDate (date) {
+                _date = date;
+                return this;
+            },
+            setTags (tags) {
+                _tags = tags;
+                return this;
+            },
+            setThum (thum) {
+                _thum = thum;
+                return this;
+            },
+            setDescription (description) {
+                _description = description;
+                return this;
+            },
+            build () {
+                return {
+                    portfolioIdx : _idx,
+                    portfolioTitle : _title,
+                    portfolioDate : _date,
+                    portfolioTags : _tags,  
+                    portfolioThum : _thum,
+                    portfolioDescription : _description
+                };
+            }
+        }
     }
 }
 
