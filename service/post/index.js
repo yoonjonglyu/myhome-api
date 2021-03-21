@@ -29,10 +29,15 @@ class PostService {
 
         return result;
     }
-    getportfolioList() {
+    getPortfolioList() {
         const result = PostModels.getportfolioList();
         result.portfolio = result.portfolio.map((post) => {
-            return this.setPostList(post.idx, post.date, post.author, post.title, post.description, post.tags);
+            return this.setPortfolioList(post.idx, post.title)
+            .setDate(post.date)
+            .setThum(post.thum)
+            .setTags(post.tags)
+            .setDescription(post.description)
+            .build();
         })
 
         return result;
@@ -61,7 +66,7 @@ class PostService {
 
         return result;
     }
-    getportfolio(idx) {
+    getPortfolio(idx) {
         const result = PostModels.getportfolio(idx);
         result.portfolio = this.setPostContents().
             setPostTitle(result.portfolio.title).
