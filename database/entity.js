@@ -42,7 +42,7 @@ class Entity {
      * @param {Object} post 포스트 내용
      * @example
      * post {
-     *  title : String
+     *  title : String,
      *  author : String,
      *  tags : Array[{idx, name}],
      *  date : String,
@@ -102,6 +102,21 @@ class Entity {
             console.error(e);
         }
     };
+    /**
+     * @description 포트폴리오 엔티티
+     * @param {Number} idx 
+     * @param {String} title 
+     * @param {Object} portfolio 
+     * @example
+     * portfolio {
+     *  date : String,
+     *  tags : Array[{idx, name}],
+     *  thum : String,
+     *  description : String,
+     *  contents : String
+     * 
+     * }
+     */
     insertPortfolio (idx, title, portfolio) {
         if(idx === undefined){  
             throw Error(`포트폴리오 : idx는 빈값일 수 없습니다.`);
